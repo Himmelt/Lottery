@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 group = 'org.soraworld.lottery'
 version = '1.7.10-0.0.1'
@@ -19,7 +20,30 @@ repositories {
 
 dependencies {
     compile 'org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT'
+    compile files('lib/PlayerPoints.jar')
+    compile files('lib/Vault-1.4.1.jar')
+    compile files('lib/Essentials.jar')
     compile files('lib/spigot-1.7.10.jar')
     compile files('lib/Violet-1.7.10-1.1.6.jar')
     compile 'com.google.code.findbugs:jsr305:3.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+buildscript {
+    ext.kotlin_version = '1.2.31'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
