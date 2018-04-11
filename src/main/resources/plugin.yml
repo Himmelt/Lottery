@@ -1,0 +1,17 @@
+name: Lottery
+version: 1.7.10-0.0.1
+author: Himmelt
+main: org.soraworld.lottery.Lottery
+depend: [Violet]
+softdepend: []
+website: https://github.com/Himmelt/Lottery
+description: Lottery Plugin.
+
+commands:
+  lottery:
+    aliases: []
+    description: "Lottery - https://github.com/Himmelt/Lottery"
+    usage: "/lottery ..."
+permissions:
+  lottery.admin:
+    default: op
