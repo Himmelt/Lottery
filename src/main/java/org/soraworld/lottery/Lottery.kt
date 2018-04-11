@@ -13,7 +13,7 @@ import java.util.*
 
 class Lottery : VioletPlugin() {
 
-    override fun registerConfig(path: File?): IIConfig {
+    override fun registerConfig(path: File): IIConfig {
         return Config(path, this)
     }
 
